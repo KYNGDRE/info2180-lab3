@@ -55,7 +55,19 @@
         button.addEventListener("click", function() {
         cells.forEach((cell, index) => {
             cell.classList.add("square");
-    
+            
+            cell.addEventListener('mouseover',function(){
+                if (cell.textContent == "") {
+                    cell.classList.add('hover');
+                }   
+            });
+
+            cell.addEventListener('mouseout',function(){
+                if (cell.textContent == "") {
+                    cell.classList.remove('hover');
+                }   
+            });
+
             // Click event for each cell
             cell.addEventListener("click", function() {
                 if (cell.textContent === "") { // Check if the cell is empty
